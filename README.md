@@ -10,7 +10,7 @@ The entry:
 
 109 characters, limit 140.
 
-English has no word for the low-grade panic of a dying phone battery, so this entry coins one: charge plus anxiety, sayable, spellable, and instantly recognisable to anyone who has ever watched the percentage tick down with no charger in sight. Say it once and the person next to you already knows the feeling, even if they have never heard the word before — that is the test a coined word has to pass. The coinage is built from two familiar roots, so it reads as English on first sight. In a head-to-head vote the word has to fill a real gap and the definition has to land in one reading.
+English has no word for the low-grade panic of a dying phone battery, so this entry coins one: charge plus anxiety, sayable, spellable, and instantly recognisable to anyone who has ever watched the percentage tick down with no charger in sight. Say it once and the person next to you already knows the feeling, even if they have never heard the word before — that is the test a coined word has to pass. The coinage is built from two familiar roots, so it reads as English on first sight. In a head-to-head vote the word has to fill a real gap and the definition has to land in one reading. The 10% in the definition is the number everyone recognises: the moment the panic starts.
 
 ## Run
 
@@ -20,4 +20,4 @@ python3 main.py
 
 ## How it works
 
-`main.py` runs one fixed line through a table of named rules and writes it to `/output/entry.txt`. The output is fully deterministic: no network, no randomness, no clock. The rules, in table order, are: an em dash separates the word from its definition, the coined word is letters only, non-empty, the part of speech is named, within the 140-character limit, the line ends with a full stop, contains letters, no control characters, no leading or trailing space, and no double spaces or newlines.
+`main.py` runs one fixed line through a table of named checks and writes it to `/output/entry.txt`. The output is fully deterministic: no network, no randomness, no clock. The checks, in table order, are: an em dash separates the word from its definition, the coined word is letters only, non-empty, the part of speech is named, within the 140-character limit, the line ends with a full stop, contains letters, every character printable, no leading or trailing space, and no double spaces or newlines. Each check is a small named function, and the table pairs it with the complaint printed when it fails — the first failure stops the run before anything is written.
